@@ -1,0 +1,66 @@
+{
+  "source_repo": "yourorg/demo-shared-lib",
+  "dependency_name": "@yourorg/demo-shared-lib",
+  "dependency_graph": {
+    "yourorg/demo-service-a": ["yourorg/demo-shared-lib"],
+    "yourorg/demo-service-b": ["yourorg/demo-shared-lib"],
+    "yourorg/demo-service-c": ["yourorg/demo-other-lib"]
+  },
+  "target_repos": [
+    "yourorg/demo-service-a",
+    "yourorg/demo-service-b"
+  ],
+  "upstream_change": {
+    "summary": "Version 1.1.0 renames LegacyClient to ApiClient and includes a small bugfix release.",
+    "old_version": "1.0.0",
+    "new_version": "1.1.0",
+    "usage_notes": [
+      "Rename LegacyClient imports to ApiClient if they exist.",
+      "Keep the final PR focused to the dependency update plus minimal compatibility fixes."
+    ]
+  },
+  "base_url": "https://app.all-hands.dev",
+  "branch_template": "deps/propagate/{dependency_slug}-{version_slug}",
+  "pr_title_template": "chore: update {dependency_name} to {new_version}",
+  "dry_run": true,
+  "repositories": {
+    "yourorg/demo-service-a": {
+      "selected_repository": "yourorg/demo-service-a",
+      "selected_branch": "main",
+      "dependency_hints": [
+        "package.json",
+        "package-lock.json",
+        "src/client.ts"
+      ],
+      "update_instructions": [
+        "Update the npm dependency version first, then regenerate the lockfile if needed."
+      ],
+      "validation_commands": [
+        "npm test"
+      ],
+      "extra_context": [
+        "This service should contain one obvious LegacyClient usage for the demo."
+      ],
+      "pr_base_branch": "main"
+    },
+    "yourorg/demo-service-b": {
+      "selected_repository": "yourorg/demo-service-b",
+      "selected_branch": "main",
+      "dependency_hints": [
+        "package.json",
+        "package-lock.json",
+        "src/service.ts"
+      ],
+      "update_instructions": [
+        "Keep the downstream diff small enough to explain in one slide."
+      ],
+      "validation_commands": [
+        "npm test"
+      ],
+      "extra_context": [
+        "This service should also use the renamed client so the PR needs a tiny code fix."
+      ],
+      "pr_base_branch": "main"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "source_repo": "acme/shared-lib",
+  "dependency_name": "@acme/shared-lib",
+  "dependency_graph": {
+    "acme/service-a": ["acme/shared-lib", "react"],
+    "acme/service-b": ["acme/shared-lib"],
+    "acme/service-c": ["acme/other-lib"]
+  },
+  "target_repos": [
+    "acme/service-a",
+    "acme/service-b"
+  ],
+  "upstream_change": {
+    "summary": "Shared lib 2.4.0 renames LegacyClient to ApiClient and includes a small bugfix release.",
+    "old_version": "2.3.1",
+    "new_version": "2.4.0",
+    "usage_notes": [
+      "If LegacyClient imports exist, rename them to ApiClient.",
+      "Keep the final PR focused to the dependency update and required compatibility fixes."
+    ]
+  },
+  "base_url": "https://app.all-hands.dev",
+  "branch_template": "deps/propagate/{dependency_slug}-{version_slug}",
+  "pr_title_template": "chore: update {dependency_name} to {new_version}",
+  "dry_run": true,
+  "repositories": {
+    "acme/service-a": {
+      "selected_repository": "acme/service-a",
+      "selected_branch": "main",
+      "dependency_hints": [
+        "package.json",
+        "package-lock.json",
+        "src/client.ts"
+      ],
+      "update_instructions": [
+        "Update the npm dependency version first, then regenerate the lockfile if needed."
+      ],
+      "validation_commands": [
+        "npm test"
+      ],
+      "extra_context": [
+        "This service uses the shared library in src/client.ts."
+      ],
+      "pr_base_branch": "main"
+    },
+    "acme/service-b": {
+      "selected_repository": "acme/service-b",
+      "selected_branch": "main",
+      "dependency_hints": [
+        "pyproject.toml",
+        "requirements.txt"
+      ],
+      "update_instructions": [
+        "Check for any import or call-site updates required by the renamed client symbol."
+      ],
+      "validation_commands": [
+        "python -m pytest"
+      ],
+      "extra_context": [
+        "Prefer the smallest possible Python code change."
+      ],
+      "pr_base_branch": "main"
+    }
+  }
+}
