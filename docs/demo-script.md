@@ -2,6 +2,8 @@
 
 Use this as a short operator script during rehearsal or a live presentation.
 
+For copy/paste Cloud UI prompts, pair this script with `docs/cloud-demo-prompts.md`.
+
 ## Goal statement
 
 "We updated a shared library upstream, and this tool fans that change out to direct dependents only. It uses one OpenHands Cloud V1 conversation per dependent repo, and each conversation is expected to produce one focused downstream pull request."

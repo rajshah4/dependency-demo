@@ -72,6 +72,7 @@ The actual code changes, validation, branch creation, and PR creation happen **i
 - `docs/demo-repo-blueprints.md` — exact downstream and upstream repo contents for the demo
 - `docs/demo-bootstrap-commands.md` — copy-paste setup commands for the demo repos
 - `docs/demo-script.md` — concise operator script for rehearsal and presentation
+- `docs/cloud-demo-prompts.md` — copy/paste OpenHands Cloud prompts for analysis, dry-run, live-run, and troubleshooting
 - `docs/demo-operator-log.md` — rehearsal and live-run handoff log
 - `docs/public-demo-results.md` — actual public repo, conversation, and PR results from a successful live run
 - `tests/test_workflow.py` — unit tests
@@ -94,6 +95,7 @@ If you want another operator to reproduce the demo, use these files:
 - `docs/demo-repo-blueprints.md` — exact repo contents to create for the demo
 - `docs/demo-bootstrap-commands.md` — copy-paste setup commands for the demo repos
 - `docs/demo-script.md` — operator script for rehearsal and presentation
+- `docs/cloud-demo-prompts.md` — exact Cloud UI prompts to paste on demo day
 - `docs/demo-operator-log.md` — running handoff log for rehearsals and live demos
 - `docs/public-demo-results.md` — successful public run with real conversation and PR URLs
 - `examples/demo-template-config.json` — placeholder config for your real demo repos

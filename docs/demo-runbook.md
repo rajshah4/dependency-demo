@@ -136,6 +136,7 @@ Use these companion docs while preparing the demo:
 - `docs/demo-repo-blueprints.md` — exact repository contents to create
 - `docs/demo-bootstrap-commands.md` — copy-paste commands for repo creation
 - `docs/demo-script.md` — operator script for rehearsal and presentation
+- `docs/cloud-demo-prompts.md` — exact Cloud UI prompts for analysis, dry-run, live-run, and rerun troubleshooting
 
 Replace placeholder values with your real repo slugs and package name.
 

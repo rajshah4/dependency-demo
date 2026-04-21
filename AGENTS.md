@@ -11,7 +11,7 @@
 - For CLI runs, the client also auto-loads a local `.env` file from the current working directory or its parents before checking those env vars.
 - JSON config works out of the box; YAML requires `PyYAML`.
 - Tests: `python -m unittest discover -s tests -t .`.
-- Demo handoff artifacts live in `docs/demo-runbook.md`, `docs/demo-repo-blueprints.md`, `docs/demo-bootstrap-commands.md`, `docs/demo-script.md`, `docs/demo-operator-log.md`, `docs/public-demo-results.md`, `examples/demo-template-config.json`, and `examples/rajshah4-public-demo-config.json`.
+- Demo handoff artifacts live in `docs/demo-runbook.md`, `docs/demo-repo-blueprints.md`, `docs/demo-bootstrap-commands.md`, `docs/demo-script.md`, `docs/cloud-demo-prompts.md`, `docs/demo-operator-log.md`, `docs/public-demo-results.md`, `examples/demo-template-config.json`, and `examples/rajshah4-public-demo-config.json`.
 - Reusable repository skill lives at `.agents/skills/dependency-propagation-analysis/`; use it when the operator wants to pass an upstream change plus a relevant repo set and reuse the same dependency-analysis workflow in Cloud UI or orchestrated runs.
 - `demo-bootstrap` generates a four-repo local bundle plus `demo-config.json`; `demo-verify` runs local Node checks and a dry-run workflow check against that bundle.
 - A real live run succeeded against public repos `rajshah4/demo-shared-lib`, `rajshah4/demo-service-a`, `rajshah4/demo-service-b`, and `rajshah4/demo-service-c`.
