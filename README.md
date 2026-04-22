@@ -28,6 +28,12 @@ The model is:
 - 1 conversation per direct dependant repo to make the downstream change
 - 1 PR per repo for traceability and isolation
 
+## Visual overview
+
+![Dependency propagation architecture](docs/assets/arch.png)
+
+A controller reads the upstream change and the provided dependency graph, identifies only the direct dependants, and then starts one isolated OpenHands conversation per affected repository.
+
 ## Validated public demo
 
 This repo includes a validated public example using:
